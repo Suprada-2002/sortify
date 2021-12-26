@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    /><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script src = "utils/createbars.js"></script>
+    <script src = "utils/bubble.js"></script>
+    <script src = "utils/timeout.js"></script>
+    <script src = "utils/insertion.js"></script>
+    <script src = "utils/selection.js"></script>
+    <script src = "utils/merge.js"></script>
+    <script src="utils//quicksort.js"></script>
+
+    <script>
+        function pause(){
+            $( ".barheights" ).stop();
+            document.getElementById("pausebtn").innerHTML = "Start";
+
+        }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sortify</title>
+  </head>
+
+
+  <body onload="addbars()"></body>
+    <h3>Sorting Visualizer</h3>
+    <nav class="navbar navbar-expand-sm bg-dark">
+      <div class="container-fuild">
+        <div class="navbar-nav">
+          <button
+            class="btn btn-outline-success"
+            id="newarr"
+            aria-current="page"
+            href="#"
+            onclick="addbars()"
+          >
+            New Array
+          </button>
+
+          <button
+            class="btn btn-outline-warning"
+            onclick="window.location.reload();"
+            aria-current="page"
+          >
+            Reset
+          </button>
+
+          <span
+            class="navbar-nav"
+            style="
+              padding: 5px;
+              margin: 0px 20px 0px;
+              color: white;
+              border-left: 2px solid white;
+            "
+            oninput="addbars()"
+          >
+            No of bars
+            <input
+              id="arr_size"
+              type="range"
+              min="10"
+              max="200"
+              step="1"
+              value="100"
+            />
+          </span>
+
+          <span
+            class="navbar-nav"
+            style="
+              padding: 5px;
+              margin: 0px 10px 0px;
+              color: white;
+              border-left: 2px solid white;
+            "
+            oninput="speedset()"
+          >
+            Speed
+            <input
+              id="speed"
+              type="range"
+              min="4"
+              max="400"
+              step="1"
+              value="380"
+            />
+          </span>
+
+          <button
+            class="btn btn-outline-primary"
+            id="bblsort"
+            aria-current="page"
+            onclick="bubble()"
+            
+          >
+            Bubble Sort
+          </button>
+
+          <button
+            class="btn btn-outline-primary"
+            id="mrgsort"
+            aria-current="page"
+            onclick="mergeSort()"
+          >
+            Merge Sort
+          </button>
+
+          <button
+            class="btn btn-outline-primary"
+            id="qcksort"
+            aria-current="page"
+            onclick="quickSort()"
+          >
+            Quick Sort
+          </button>
+
+          <button
+            class="btn btn-outline-primary"
+            id="selctsort"
+            aria-current="page"
+            onclick="selectionSort()"
+          >
+            Selection Sort
+          </button>
+
+          <button
+            class="btn btn-outline-primary"
+            id="insertsort"
+            aria-current="page"
+            onclick="insertionSort()"
+          >
+            Insertion Sort
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="main" id="addbar" onload="addbars()"></div>
+  </body>
+</html>
